@@ -49,5 +49,6 @@ public class Main {
                 tab[i]= new StringAnalyst(chaine,i*(taille/nbThread),taille,recherche);
             }
         }
+        tab[nbThread].start();
     }
 }
