@@ -1,4 +1,5 @@
 public class StringAnalyst extends Thread{
+    public int nb=0;
     private String chaine;
 
     private char recherche;
@@ -12,8 +13,7 @@ public class StringAnalyst extends Thread{
             recherche=c;
     }
     public void run(){
-        int nb = 0;
-        for (int i=0; i < chaine.length(); i++)
+        for (int i=debut; i <= fin ; i++)
         {
             if (chaine.charAt(i) == recherche)
                 nb++;
