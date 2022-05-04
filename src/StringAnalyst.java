@@ -18,7 +18,7 @@ public class StringAnalyst extends Thread{
             if (chaine.charAt(i) == recherche)
                 nb++;
         }
-        System.out.println("il y a "+ nb +" occurence de " + recherche);
+        //System.out.println("il y a "+ nb +" occurence de " + recherche);
 
     }
     }
