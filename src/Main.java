@@ -32,6 +32,22 @@ public class Main {
 
         //exo5 tableau de Thread pour séparer la recherche dans une longue chaine de caractère
         //
-        int nbThread = 8;
+        int nbThread = Runtime.getRuntime().availableProcessors();
+        // check the number of processors available
+        //System.out.println(""+Runtime.getRuntime().availableProcessors());
+        int taille;
+        String chaine;
+        chaine="Salut bienvenue";
+        char recherche = 'e';
+        taille = chaine.length();
+        StringAnalyst tab[] = new StringAnalyst[nbThread];
+        for(int i=0;i<nbThread;i++){
+            if(i!=nbThread-1){
+                tab[i]= new StringAnalyst(chaine,i*(taille/nbThread),(1+i)*(taille/nbThread),recherche);
+            }
+            else{
+                tab[i]= new StringAnalyst(chaine,i*(taille/nbThread),taille,recherche);
+            }
+        }
     }
 }
