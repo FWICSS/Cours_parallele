@@ -12,7 +12,7 @@ public class threadpremier extends Thread{
         nombre = new ArrayList<Integer>();
     }
     public boolean estpremier(int x){
-        for(int i = 2; i >= Math.sqrt(x); i--){
+        for(int i = 2; i <= Math.sqrt(x); i++){
             if( x % i == 0){
                 return false;
             }

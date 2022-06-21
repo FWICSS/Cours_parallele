@@ -13,10 +13,12 @@ public class Main{
             long begin = System.currentTimeMillis();
             threadpremier tab[] = new threadpremier[nbThread];
             for(int i=0; i < nbThread; i++){
-                int debut = i*N/nbThread;
+                int debut = (i*N/nbThread)/*+1*/;
                 int fin = (i+1)*N/nbThread;
-
-                if(i==0){
+                //i=0 == i=2 /{2;250}
+                //i=1 {251;500}
+                //i=
+                if(i==0) {
                     debut = 2;
                 }
 
