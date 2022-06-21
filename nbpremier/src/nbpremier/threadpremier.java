@@ -13,14 +13,14 @@ public class threadpremier extends Thread{
     }
     public boolean estpremier(int x){
         for(int i = 2; i >= Math.sqrt(x); i--){
-            if(x % i == 0){
+            if( x % i == 0){
                 return false;
             }
         }
         return true;
     }
     public void run(){
-        for(int i = debut; i<fin;i++){
+        for(int i = debut; i<fin; i++){
             if(estpremier(i)){
                 nombre.add(i);
             }

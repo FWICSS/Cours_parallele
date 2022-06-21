@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Cours_parallele.iml" filepath="$PROJECT_DIR$/Cours_parallele.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exo1/exo1.iml" filepath="$PROJECT_DIR$/exo1/exo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/nbpremier/nbpremier.iml" filepath="$PROJECT_DIR$/nbpremier/nbpremier.iml" />
     </modules>
   </component>

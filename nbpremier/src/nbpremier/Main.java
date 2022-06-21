@@ -17,13 +17,9 @@ public class Main{
                 int fin = (i+1)*N/nbThread;
 
                 if(i==0){
-                    debut =2;
+                    debut = 2;
                 }
-                /*
-                if (i%2 == 0){
-                    debut = debut + 1;
-                }
-                */
+
                 tab[i] = new threadpremier(debut,fin);
                 tab[i].start();
             }
