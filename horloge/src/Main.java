@@ -3,7 +3,7 @@ public class Main {
         HorlogeThread o = new HorlogeThread(1,2);
         o.start();
 
-        ControleHorlogeThread c = new ControleHorlogeThread();
+        ControleHorlogeThread c = new ControleHorlogeThread(o);
         c.start();
     }
 }

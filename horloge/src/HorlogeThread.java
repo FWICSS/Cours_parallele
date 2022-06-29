@@ -6,6 +6,8 @@ public class HorlogeThread extends Thread{
 
     private int time;
 
+    public int arreter = 0;
+
     public HorlogeThread(int type,int t) {
       format = type;
       time = t*1000;
@@ -13,22 +15,29 @@ public class HorlogeThread extends Thread{
     public void run() {
         DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("HH:mm:ss");
         DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yy/MM/dd HH:mm:ss");
-        while (format==1) {
-            try {
-                Thread.sleep(time);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+        while (arreter == 0) {
+            while (format == 1) {
+                try {
+                    Thread.sleep(time);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                System.out.println(dtf2.format(LocalDateTime.now()));
             }
-            System.out.println(dtf2.format(LocalDateTime.now()));
-        }
-        while (format==2){
-            try {
-                Thread.sleep(time);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            while (format == 2) {
+                try {
+                    Thread.sleep(time);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+
+                System.out.println(dtf3.format(LocalDateTime.now()));
             }
-            System.out.println(dtf3.format(LocalDateTime.now()));
         }
+    }
+    public void setArreter(){
+        arreter = 1;
     }
 
     public int getFormat() {
@@ -44,6 +53,6 @@ public class HorlogeThread extends Thread{
     }
 
     public void setTime(int time) {
-        this.time = time;
+        this.time = time*1000;
     }
 }
