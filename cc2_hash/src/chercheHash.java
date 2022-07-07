@@ -12,9 +12,13 @@ public class chercheHash extends Thread {
 
     public void run() {
         for (int i = debut; i <= fin; i++) {
-            if(Mining.hash(i) == Hash){
-                nombre= Mining.proposerReponse(i,"AIGLE_Dimitri");
+            int chiffre = i;
+            String testhash = Mining.hash(chiffre);
+            if(testhash.equals(Hash)){
+                System.out.println("WIN");
+                nombre = Mining.proposerReponse(chiffre,"AIGLE");
                 System.out.println(nombre);
+                i = fin+1;
             }
         }
     }
